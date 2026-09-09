@@ -1,772 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uzair Ghaswala — Web Development & Digital Marketing</title>
+<meta name="description" content="Uzair Ghaswala — Web Development, E-commerce, Shopify, WordPress, SEO, Google Ads, Meta Ads, Social Media Marketing and Graphic Design.">
+<meta name="theme-color" content="#07080d">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Uzair Ghaswala | Web Developer & Digital Marketer</title>
-
-    <meta name="description"
-        content="Uzair Ghaswala is a Web Developer and Digital Marketing Professional specializing in Shopify, Web Development, SEO, Meta Ads and E-commerce solutions.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+<div id="scroll-progress"></div>
+<div class="cursor-glow"></div>
 
-    <header class="header">
+<header class="site-header" id="siteHeader">
+  <div class="container navbar">
+    <a href="#home" class="brand">
+      <span class="brand-mark">U</span>
+      <span>Uzair<span class="brand-accent">.</span></span>
+    </a>
 
-        <div class="container nav">
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-            <a href="#home" class="logo">
-                <span>U</span>zair.
-            </a>
+    <a href="#contact" class="header-cta">Start a Project <i data-lucide="arrow-up-right"></i></a>
 
-            <nav class="nav-menu">
+    <button class="menu-trigger" id="menuTrigger" aria-label="Open menu" aria-expanded="false">
+      <i data-lucide="menu"></i>
+    </button>
+  </div>
+</header>
 
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <div class="drawer-head">
+    <a href="#home" class="brand" onclick="closeMenu()">
+      <span class="brand-mark">U</span>
+      <span>Uzair<span class="brand-accent">.</span></span>
+    </a>
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+      <i data-lucide="x"></i>
+    </button>
+  </div>
+  <div class="drawer-nav">
+    <a href="#home"><span>01</span>Home<i data-lucide="arrow-up-right"></i></a>
+    <a href="#about"><span>02</span>About<i data-lucide="arrow-up-right"></i></a>
+    <a href="#services"><span>03</span>Services<i data-lucide="arrow-up-right"></i></a>
+    <a href="#work"><span>04</span>Work<i data-lucide="arrow-up-right"></i></a>
+    <a href="#experience"><span>05</span>Experience<i data-lucide="arrow-up-right"></i></a>
+    <a href="#contact"><span>06</span>Contact<i data-lucide="arrow-up-right"></i></a>
+  </div>
+  <div class="drawer-bottom">
+    <span>Web Development • Digital Marketing</span>
+    <a href="https://wa.me/919313955066" target="_blank" rel="noopener">Chat on WhatsApp <i data-lucide="message-circle"></i></a>
+  </div>
+</aside>
 
-            </nav>
+<main>
+<section class="hero section-pad" id="home">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <div class="eyebrow"><span></span>WEB DEVELOPMENT • DIGITAL MARKETING</div>
+      <h1>Building digital <span>presence that performs.</span></h1>
+      <p>I’m <strong>Uzair Ghaswala</strong> — a Web Developer and Digital Marketing Professional with 3+ years of practical experience in websites, e-commerce, Shopify, WordPress, SEO and paid advertising.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#work">Explore My Work <i data-lucide="arrow-up-right"></i></a>
+        <a class="btn btn-soft" href="#contact">Hire Me</a>
+      </div>
+      <div class="hero-metrics">
+        <div><b>3+</b><span>Years Experience</span></div>
+        <div><b>5+</b><span>Selected Projects</span></div>
+        <div><b>8+</b><span>Services</span></div>
+      </div>
+      <div class="hero-trust">
+        <span><i data-lucide="badge-check"></i> Practical experience</span>
+        <span><i data-lucide="sparkles"></i> Modern solutions</span>
+      </div>
+    </div>
 
-            <a href="#contact" class="nav-btn">
-                Let's Talk
-            </a>
+    <div class="hero-stage reveal delay-1">
+      <div class="stage-ring ring-1"></div>
+      <div class="stage-ring ring-2"></div>
+      <div class="stage-grid"></div>
 
-            <button class="menu-btn" id="menuBtn">
-                ☰
-            </button>
-
+      <div class="portrait-shell">
+        <div class="portrait-placeholder">
+          <div class="portrait-icon"><i data-lucide="user-round"></i></div>
+          <span>PROFILE PHOTO</span>
+          <small>Add your photo later</small>
         </div>
-
-    </header>
-
-
-    <!-- ================= MAIN ================= -->
-
-    <main>
-
-        <!-- ================= HERO ================= -->
-
-        <section class="hero" id="home">
-
-            <div class="container hero-content">
-
-                <div class="hero-text">
-
-                    <div class="hero-tag">
-                        WEB DEVELOPMENT • DIGITAL MARKETING
-                    </div>
-
-                    <h1>
-                        I Build Websites.
-                        <span>I Grow Digital Businesses.</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        I'm Uzair Ghaswala, a Web Developer and Digital
-                        Marketing Professional with 3+ years of practical
-                        experience in Shopify, e-commerce, SEO, Meta Ads
-                        and custom web solutions.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a href="#projects" class="btn btn-primary">
-                            View My Work
-                        </a>
-
-                        <a href="#contact" class="btn btn-outline">
-                            Let's Work Together
-                        </a>
-
-                    </div>
-
-                    <div class="hero-stats">
-
-                        <div class="stat">
-                            <strong>3+</strong>
-                            <span>Years Experience</span>
-                        </div>
-
-                        <div class="stat">
-                            <strong>5+</strong>
-                            <span>Projects</span>
-                        </div>
-
-                        <div class="stat">
-                            <strong>2</strong>
-                            <span>Core Areas</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PROFILE -->
-
-                <div class="hero-image">
-
-                    <div class="profile-frame">
-
-                        <div class="profile-placeholder">
-
-                            <div class="camera-icon">
-                                <span>+</span>
-                            </div>
-
-                            <p>Your Photo</p>
-
-                            <small>Profile Photo</small>
-
-                        </div>
-
-                    </div>
-
-                    <div class="floating-card card-one">
-
-                        <div class="floating-icon">
-                            &lt;/&gt;
-                        </div>
-
-                        <div>
-                            <strong>Web Development</strong>
-                            <span>Modern & Functional</span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="floating-card card-two">
-
-                        <div class="floating-icon">
-                            ↗
-                        </div>
-
-                        <div>
-                            <strong>Digital Marketing</strong>
-                            <span>Growth Focused</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= ABOUT ================= -->
-
-        <section class="section about-section" id="about">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-                        <span class="section-number">01</span>
-                        <span class="section-label">ABOUT ME</span>
-                    </div>
-
-                    <h2>
-                        Developer mindset.
-                        <span>Business focus.</span>
-                    </h2>
-
-                </div>
-
-
-                <div class="about-grid">
-
-                    <div class="about-text">
-
-                        <p class="large-text">
-                            I build digital experiences that combine
-                            <strong>technology, design and marketing.</strong>
-                        </p>
-
-                        <p>
-                            I'm a Web Developer and Digital Marketing
-                            Professional with 3+ years of practical
-                            experience working with Shopify, e-commerce
-                            websites, custom web solutions, SEO and Meta Ads.
-                        </p>
-
-                        <p>
-                            My experience includes developing complete
-                            e-commerce websites, custom Shopify features,
-                            business-specific dashboards and digital
-                            marketing solutions.
-                        </p>
-
-                    </div>
-
-
-                    <div class="about-info">
-
-                        <div class="info-box">
-                            <span>Name</span>
-                            <strong>Uzair Ghaswala</strong>
-                        </div>
-
-                        <div class="info-box">
-                            <span>Experience</span>
-                            <strong>3+ Years</strong>
-                        </div>
-
-                        <div class="info-box">
-                            <span>Focus</span>
-                            <strong>Web & Marketing</strong>
-                        </div>
-
-                        <div class="info-box">
-                            <span>Education</span>
-                            <strong>BCA</strong>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= SKILLS ================= -->
-
-        <section class="section skills-section" id="skills">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-                        <span class="section-number">02</span>
-                        <span class="section-label">SKILLS</span>
-                    </div>
-
-                    <h2>
-                        What I work
-                        <span>with.</span>
-                    </h2>
-
-                </div>
-
-
-                <div class="skills-grid">
-
-
-                    <!-- WEB -->
-
-                    <div class="skill-card">
-
-                        <div class="skill-top">
-                            <span class="skill-icon">&lt;/&gt;</span>
-                            <span class="skill-number">01</span>
-                        </div>
-
-                        <h3>Web Development</h3>
-
-                        <p>
-                            Building responsive websites, custom
-                            functionality and business-specific web
-                            solutions.
-                        </p>
-
-                        <div class="skill-list">
-
-                            <span>PHP</span>
-                            <span>MySQL</span>
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>Bootstrap</span>
-                            <span>jQuery</span>
-                            <span>WordPress</span>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- SHOPIFY -->
-
-                    <div class="skill-card">
-
-                        <div class="skill-top">
-                            <span class="skill-icon">S</span>
-                            <span class="skill-number">02</span>
-                        </div>
-
-                        <h3>Shopify & E-commerce</h3>
-
-                        <p>
-                            Creating and managing e-commerce stores,
-                            custom Liquid features and online
-                            business solutions.
-                        </p>
-
-                        <div class="skill-list">
-
-                            <span>Shopify</span>
-                            <span>Custom Liquid</span>
-                            <span>E-commerce</span>
-                            <span>Product Management</span>
-                            <span>Custom Features</span>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- MARKETING -->
-
-                    <div class="skill-card">
-
-                        <div class="skill-top">
-                            <span class="skill-icon">↗</span>
-                            <span class="skill-number">03</span>
-                        </div>
-
-                        <h3>Digital Marketing</h3>
-
-                        <p>
-                            Helping businesses improve visibility,
-                            reach customers and grow through digital
-                            marketing.
-                        </p>
-
-                        <div class="skill-list">
-
-                            <span>SEO</span>
-                            <span>Google Search Console</span>
-                            <span>Meta Ads</span>
-                            <span>Facebook Ads</span>
-                            <span>Website Optimization</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= PROJECTS ================= -->
-
-        <section class="section projects-section" id="projects">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-                        <span class="section-number">03</span>
-                        <span class="section-label">SELECTED WORK</span>
-                    </div>
-
-                    <h2>
-                        Projects that
-                        <span>I've built.</span>
-                    </h2>
-
-                </div>
-
-
-                <div class="projects-grid">
-
-
-                    <!-- PROJECT 01 -->
-
-                    <article class="project-card">
-
-                        <div class="project-image">
-
-                            <img src="images/dsfashion.png"
-                                alt="DS Fashion website">
-
-                            <div class="project-overlay">
-                                <span>01</span>
-                            </div>
-
-                        </div>
-
-                        <div class="project-content">
-
-                            <span class="project-category">
-                                SHOPIFY • E-COMMERCE
-                            </span>
-
-                            <h3>DS Fashion</h3>
-
-                            <p>
-                                E-commerce website development,
-                                store management and website
-                                optimization.
-                            </p>
-
-                            <a href="https://dsfashion.in/"
-                                target="_blank"
-                                rel="noopener">
-                                View Live Project <span>↗</span>
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROJECT 02 -->
-
-                    <article class="project-card">
-
-                        <div class="project-image">
-
-                            <img src="images/niffar.png"
-                                alt="Niffar website">
-
-                            <div class="project-overlay">
-                                <span>02</span>
-                            </div>
-
-                        </div>
-
-                        <div class="project-content">
-
-                            <span class="project-category">
-                                SHOPIFY • E-COMMERCE
-                            </span>
-
-                            <h3>Niffar</h3>
-
-                            <p>
-                                Shopify e-commerce development,
-                                customization and website management.
-                            </p>
-
-                            <a href="https://niffar.com/"
-                                target="_blank"
-                                rel="noopener">
-                                View Live Project <span>↗</span>
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROJECT 03 -->
-
-                    <article class="project-card">
-
-                        <div class="project-image">
-
-                            <img src="images/kafta.ae.png"
-                                alt="Kaftan UAE website">
-
-                            <div class="project-overlay">
-                                <span>03</span>
-                            </div>
-
-                        </div>
-
-                        <div class="project-content">
-
-                            <span class="project-category">
-                                SHOPIFY • WEB DEVELOPMENT
-                            </span>
-
-                            <h3>Kaftan.ae</h3>
-
-                            <p>
-                                E-commerce website development,
-                                customization and management.
-                            </p>
-
-                            <a href="https://kaftan.ae/"
-                                target="_blank"
-                                rel="noopener">
-                                View Live Project <span>↗</span>
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROJECT 04 -->
-
-                    <article class="project-card">
-
-                        <div class="project-image">
-
-                            <img src="images/salsabila.png"
-                                alt="Salsabila Artsea website">
-
-                            <div class="project-overlay">
-                                <span>04</span>
-                            </div>
-
-                        </div>
-
-                        <div class="project-content">
-
-                            <span class="project-category">
-                                E-COMMERCE • DIGITAL MARKETING
-                            </span>
-
-                            <h3>Salsabila Artsea</h3>
-
-                            <p>
-                                E-commerce website development,
-                                SEO, digital marketing and custom
-                                functionality.
-                            </p>
-
-                            <a href="https://salsabilaartsea.shop/"
-                                target="_blank"
-                                rel="noopener">
-                                View Live Project <span>↗</span>
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROJECT 05 -->
-
-                    <article class="project-card featured-project">
-
-                        <div class="project-image">
-
-                            <img src="images/dashboard.png"
-                                alt="Salsabila Artsea custom dashboard">
-
-                            <div class="project-overlay">
-                                <span>05</span>
-                            </div>
-
-                        </div>
-
-                        <div class="project-content">
-
-                            <span class="project-category">
-                                CUSTOM DEVELOPMENT • SHOPIFY
-                            </span>
-
-                            <h3>Salsabila Artsea Dashboard</h3>
-
-                            <p>
-                                Custom dashboard connected with the
-                                Shopify store to manage specific
-                                collection and vendor-related orders
-                                separately.
-                            </p>
-
-                            <div class="project-links">
-
-                                <a href="https://dashboard.salsabilaartsea.shop/"
-                                    target="_blank"
-                                    rel="noopener">
-                                    Dashboard ↗
-                                </a>
-
-                                <a href="https://salsabilaartsea.shop/"
-                                    target="_blank"
-                                    rel="noopener">
-                                    Main Store ↗
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= EXPERIENCE ================= -->
-
-        <section class="section experience-section" id="experience">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-                        <span class="section-number">04</span>
-                        <span class="section-label">EXPERIENCE</span>
-                    </div>
-
-                    <h2>
-                        Experience that
-                        <span>delivers.</span>
-                    </h2>
-
-                </div>
-
-
-                <div class="experience-item">
-
-                    <div class="experience-date">
-                        2023 — 2026
-                    </div>
-
-                    <div class="experience-content">
-
-                        <div class="experience-header">
-
-                            <div>
-                                <h3>Web & Shopify Developer</h3>
-                                <p>3 Years Professional Experience</p>
-                            </div>
-
-                            <span class="experience-badge">
-                                3+ YEARS
-                            </span>
-
-                        </div>
-
-                        <ul>
-
-                            <li>
-                                Developed and maintained complete
-                                Shopify e-commerce websites.
-                            </li>
-
-                            <li>
-                                Created custom Shopify Liquid features,
-                                sections and business-specific solutions.
-                            </li>
-
-                            <li>
-                                Developed custom Admin and
-                                Customer/Student panels.
-                            </li>
-
-                            <li>
-                                Managed product data, website updates,
-                                troubleshooting and backend operations.
-                            </li>
-
-                            <li>
-                                Worked with SEO, Google Search Console
-                                and Meta/Facebook Ads.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CONTACT ================= -->
-
-        <section class="section contact-section" id="contact">
-
-            <div class="container">
-
-                <div class="contact-box">
-
-                    <div class="contact-content">
-
-                        <span class="section-label">
-                            HAVE A PROJECT?
-                        </span>
-
-                        <h2>
-                            Let's build something
-                            <span>great together.</span>
-                        </h2>
-
-                        <p>
-                            Looking for a Web Developer or Digital
-                            Marketing Professional? Let's discuss
-                            your project.
-                        </p>
-
-                    </div>
-
-
-                    <div class="contact-buttons">
-
-                        <a href="mailto:uzairghaswala2005@gmail.com"
-                            class="btn btn-primary">
-                            Email Me
-                        </a>
-
-                        <a href="https://wa.me/919313955066"
-                            target="_blank"
-                            rel="noopener"
-                            class="btn btn-outline">
-                            WhatsApp
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer class="footer">
-
-        <div class="container">
-
-            <p>
-                © <span id="currentYear">2026</span>
-                Uzair Ghaswala
-            </p>
-
-            <p>
-                Web Development • Digital Marketing
-            </p>
-
+      </div>
+
+      <div class="hero-badge badge-left">
+        <span class="badge-icon blue"><i data-lucide="code-2"></i></span>
+        <div><b>Web Development</b><small>Websites • E-commerce • Custom</small></div>
+      </div>
+      <div class="hero-badge badge-right">
+        <span class="badge-icon pink"><i data-lucide="chart-no-axes-combined"></i></span>
+        <div><b>Digital Marketing</b><small>SEO • Ads • Social Media</small></div>
+      </div>
+      <div class="floating-stack">
+        <span>SHOPIFY</span><span>WORDPRESS</span><span>SEO</span><span>ADS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="marquee-strip" aria-label="Services">
+  <div class="marquee-track">
+    <span>Web Development</span><b>✦</b><span>Shopify</span><b>✦</b><span>WordPress</span><b>✦</b><span>Meta Ads</span><b>✦</b><span>Google Ads</span><b>✦</b><span>SEO / SEM</span><b>✦</b><span>Social Media</span><b>✦</b><span>Graphic Design</span><b>✦</b>
+    <span>Web Development</span><b>✦</b><span>Shopify</span><b>✦</b><span>WordPress</span><b>✦</b><span>Meta Ads</span><b>✦</b><span>Google Ads</span><b>✦</b><span>SEO / SEM</span><b>✦</b><span>Social Media</span><b>✦</b><span>Graphic Design</span><b>✦</b>
+  </div>
+</section>
+
+<section class="section-pad" id="about">
+  <div class="container">
+    <div class="section-intro reveal">
+      <div><span class="section-no">01</span><span class="section-kicker">ABOUT</span><h2>Developer mindset.<br><em>Growth thinking.</em></h2></div>
+      <p>I bring development and digital marketing together so a business can build a strong online presence and then actually use it to grow.</p>
+    </div>
+    <div class="about-layout">
+      <div class="about-story glass-card reveal">
+        <div class="card-label">WHO I AM</div>
+        <h3>I build more than pages — I build <span>digital experiences.</span></h3>
+        <p>My work covers complete websites, e-commerce stores, custom functionality, business-specific dashboards, product management, SEO, Google Search Console, Meta Ads and more.</p>
+        <div class="about-pills"><span>Strategy</span><span>Development</span><span>Marketing</span><span>Optimization</span></div>
+      </div>
+      <div class="about-stats reveal delay-1">
+        <div class="fact-card"><span>Based in</span><b>Surat, Gujarat</b><i data-lucide="map-pin"></i></div>
+        <div class="fact-card"><span>Education</span><b>BCA</b><i data-lucide="graduation-cap"></i></div>
+        <div class="fact-card"><span>Focus</span><b>Web + Marketing</b><i data-lucide="layers-3"></i></div>
+        <div class="fact-card"><span>Experience</span><b>3+ Years</b><i data-lucide="briefcase-business"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad services-section" id="services">
+  <div class="container">
+    <div class="section-intro reveal">
+      <div><span class="section-no">02</span><span class="section-kicker">SERVICES</span><h2>Everything your<br><em>online presence needs.</em></h2></div>
+      <p>From building the website to reaching the right audience — practical digital services for modern businesses.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service-card reveal"><div class="service-head"><span class="service-icon blue"><i data-lucide="code-2"></i></span><span>01</span></div><h3>Web Development</h3><p>Responsive, modern websites and custom web solutions built around business goals.</p><div class="tags"><span>PHP</span><span>HTML/CSS</span><span>JavaScript</span></div></article>
+      <article class="service-card reveal delay-1"><div class="service-head"><span class="service-icon violet"><i data-lucide="shopping-bag"></i></span><span>02</span></div><h3>Shopify / WordPress</h3><p>E-commerce stores, custom sections, Liquid, product setup and store optimization.</p><div class="tags"><span>Shopify</span><span>Liquid</span><span>WordPress</span></div></article>
+      <article class="service-card reveal"><div class="service-head"><span class="service-icon pink"><i data-lucide="megaphone"></i></span><span>03</span></div><h3>Meta Ads</h3><p>Facebook and Instagram campaigns focused on reach, enquiries and sales.</p><div class="tags"><span>Facebook</span><span>Instagram</span><span>Campaigns</span></div></article>
+      <article class="service-card reveal delay-1"><div class="service-head"><span class="service-icon orange"><i data-lucide="share-2"></i></span><span>04</span></div><h3>Social Media Marketing</h3><p>Content direction, creative planning and a consistent social presence for your brand.</p><div class="tags"><span>Content</span><span>Instagram</span><span>Growth</span></div></article>
+      <article class="service-card reveal"><div class="service-head"><span class="service-icon green"><i data-lucide="search-check"></i></span><span>05</span></div><h3>SEO / SEM</h3><p>On-page SEO, product SEO, search visibility and Search Console monitoring.</p><div class="tags"><span>SEO</span><span>SEM</span><span>Search Console</span></div></article>
+      <article class="service-card reveal delay-1"><div class="service-head"><span class="service-icon yellow"><i data-lucide="mouse-pointer-click"></i></span><span>06</span></div><h3>Google Ads</h3><p>Search-focused advertising to capture people actively looking for your services.</p><div class="tags"><span>Search Ads</span><span>Keywords</span><span>Leads</span></div></article>
+      <article class="service-card reveal"><div class="service-head"><span class="service-icon cyan"><i data-lucide="palette"></i></span><span>07</span></div><h3>Graphic Design</h3><p>Social creatives, promotional graphics and clean visuals for digital campaigns.</p><div class="tags"><span>Creative</span><span>Social</span><span>Ads</span></div></article>
+      <article class="service-card featured-service reveal delay-1"><div class="service-orb"></div><div class="service-head"><span class="service-icon white"><i data-lucide="sparkles"></i></span><span>08</span></div><h3>Digital Strategy</h3><p>Connect website, content, SEO and advertising into one practical growth roadmap.</p><div class="tags"><span>Strategy</span><span>Conversion</span><span>Growth</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad work-section" id="work">
+  <div class="container">
+    <div class="section-intro reveal">
+      <div><span class="section-no">03</span><span class="section-kicker">SELECTED WORK</span><h2>Built for real<br><em>businesses.</em></h2></div>
+      <p>Real-world e-commerce websites, custom systems and digital solutions from my experience.</p>
+    </div>
+    <div class="work-grid">
+      <article class="work-card wide reveal">
+        <div class="work-image"><img src="images/dsfashion.png" alt="DS Fashion website"><span class="work-index">01</span><a href="https://dsfashion.in/" target="_blank" rel="noopener" class="image-link">Open project <i data-lucide="arrow-up-right"></i></a></div>
+        <div class="work-info"><div><span>SHOPIFY • E-COMMERCE</span><h3>DS Fashion</h3><p>E-commerce website development, store management and website optimization.</p></div><a href="https://dsfashion.in/" target="_blank" rel="noopener" class="round-link"><i data-lucide="arrow-up-right"></i></a></div>
+      </article>
+
+      <article class="work-card reveal"><div class="work-image"><img src="images/niffar.png" alt="Niffar website"><span class="work-index">02</span><a href="https://niffar.com/" target="_blank" rel="noopener" class="image-link">Open project <i data-lucide="arrow-up-right"></i></a></div><div class="work-info"><div><span>SHOPIFY • E-COMMERCE</span><h3>Niffar</h3><p>Shopify e-commerce development, customization and management.</p></div><a href="https://niffar.com/" target="_blank" rel="noopener" class="round-link"><i data-lucide="arrow-up-right"></i></a></div></article>
+
+      <article class="work-card reveal delay-1"><div class="work-image"><img src="images/kafta.ae.png" alt="Kaftan UAE website"><span class="work-index">03</span><a href="https://kaftan.ae/" target="_blank" rel="noopener" class="image-link">Open project <i data-lucide="arrow-up-right"></i></a></div><div class="work-info"><div><span>SHOPIFY • WEB DEVELOPMENT</span><h3>Kaftan.ae</h3><p>E-commerce website development, customization and management.</p></div><a href="https://kaftan.ae/" target="_blank" rel="noopener" class="round-link"><i data-lucide="arrow-up-right"></i></a></div></article>
+
+      <article class="work-card reveal"><div class="work-image"><img src="images/salsabila.png" alt="Salsabila Artsea website"><span class="work-index">04</span><a href="https://salsabilaartsea.shop/" target="_blank" rel="noopener" class="image-link">Open project <i data-lucide="arrow-up-right"></i></a></div><div class="work-info"><div><span>E-COMMERCE • DIGITAL MARKETING</span><h3>Salsabila Artsea</h3><p>E-commerce, SEO, marketing and custom functionality.</p></div><a href="https://salsabilaartsea.shop/" target="_blank" rel="noopener" class="round-link"><i data-lucide="arrow-up-right"></i></a></div></article>
+
+      <article class="work-card featured-work reveal delay-1">
+        <div class="work-image"><img src="images/dashboard.png" alt="Salsabila Artsea custom dashboard"><span class="work-index">05</span><a href="https://dashboard.salsabilaartsea.shop/" target="_blank" rel="noopener" class="image-link">Open dashboard <i data-lucide="arrow-up-right"></i></a></div>
+        <div class="work-body"><span>CUSTOM DEVELOPMENT • SHOPIFY INTEGRATION</span><h3>Salsabila Artsea Dashboard</h3><p>Custom dashboard connected with the Shopify store to separately manage orders from specific collections and vendors.</p><div class="work-actions"><a href="https://dashboard.salsabilaartsea.shop/" target="_blank" rel="noopener">Dashboard ↗</a><a href="https://salsabilaartsea.shop/" target="_blank" rel="noopener">Main Store ↗</a></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad process-section">
+  <div class="container">
+    <div class="section-intro reveal"><div><span class="section-no">04</span><span class="section-kicker">PROCESS</span><h2>A simple process.<br><em>Serious execution.</em></h2></div></div>
+    <div class="process-grid">
+      <div class="process-card reveal"><span>01</span><i data-lucide="message-circle"></i><h3>Discover</h3><p>Understand the business, audience and goals.</p></div>
+      <div class="process-card reveal delay-1"><span>02</span><i data-lucide="lightbulb"></i><h3>Plan</h3><p>Define the right website and marketing approach.</p></div>
+      <div class="process-card reveal"><span>03</span><i data-lucide="layers-3"></i><h3>Build</h3><p>Create and optimize the digital experience.</p></div>
+      <div class="process-card reveal delay-1"><span>04</span><i data-lucide="rocket"></i><h3>Grow</h3><p>Use SEO, content and ads to reach the right audience.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad experience-section" id="experience">
+  <div class="container">
+    <div class="section-intro reveal"><div><span class="section-no">05</span><span class="section-kicker">EXPERIENCE</span><h2>Three years of<br><em>practical work.</em></h2></div><p>Hands-on experience across development, e-commerce operations and digital marketing.</p></div>
+    <div class="experience-card reveal">
+      <div class="timeline-year"><span>2023</span><i></i><span>2026</span></div>
+      <div class="experience-main">
+        <div class="experience-title"><div><span class="small-kicker">PROFESSIONAL EXPERIENCE</span><h3>Web Developer & Digital Marketing Professional</h3><p>3 Years Practical Experience</p></div><span class="experience-pill">3+ YEARS</span></div>
+        <div class="experience-columns">
+          <div><h4>Web Development</h4><p>Built and maintained Shopify e-commerce websites, custom Liquid features, responsive interfaces, custom Admin/Customer panels and business-specific web solutions.</p></div>
+          <div><h4>Digital Marketing</h4><p>Worked on SEO, Google Search Console, Meta/Facebook Ads, website optimization, product visibility and digital growth activities.</p></div>
         </div>
+        <div class="experience-points">
+          <span><i data-lucide="check"></i> Shopify & WordPress</span>
+          <span><i data-lucide="check"></i> PHP, MySQL, JavaScript</span>
+          <span><i data-lucide="check"></i> SEO / SEM</span>
+          <span><i data-lucide="check"></i> Meta & Google Ads</span>
+          <span><i data-lucide="check"></i> E-commerce Management</span>
+          <span><i data-lucide="check"></i> Custom Business Solutions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    </footer>
+<section class="section-pad contact-section" id="contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <div class="contact-art art-a"></div><div class="contact-art art-b"></div>
+      <div class="contact-copy"><span class="section-kicker">06 — LET'S TALK</span><h2>Have a project?<br><em>Let's make it happen.</em></h2><p>Looking for a website, e-commerce solution or digital marketing support? Tell me what you're building.</p></div>
+      <div class="contact-actions">
+        <a href="mailto:uzairghaswala2005@gmail.com" class="contact-item"><span class="contact-icon blue"><i data-lucide="mail"></i></span><div><small>EMAIL</small><b>uzairghaswala2005@gmail.com</b></div><i data-lucide="arrow-up-right"></i></a>
+        <a href="https://wa.me/919313955066" target="_blank" rel="noopener" class="contact-item"><span class="contact-icon green"><i data-lucide="message-circle"></i></span><div><small>WHATSAPP</small><b>+91 93139 55066</b></div><i data-lucide="arrow-up-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
+<a class="whatsapp-float" href="https://wa.me/919313955066" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-ping"></span><i data-lucide="message-circle"></i><span class="wa-text">Chat on WhatsApp</span>
+</a>
 
-    <script src="js/style.js"></script>
+<button class="back-top" id="backTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
 
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Uzair Ghaswala</span>
+    <span>Web Development • Digital Marketing</span>
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="js/style.js"></script>
 </body>
-
 </html>

@@ -1,298 +1,110 @@
-/* =========================================================
-   UZAIR GHASWALA — PORTFOLIO JS
-========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
+  if (window.lucide) lucide.createIcons();
 
-    /* =====================================================
-       HEADER SCROLL EFFECT
-    ===================================================== */
+  const header = document.getElementById("siteHeader");
+  const progress = document.getElementById("scroll-progress");
+  const backTop = document.getElementById("backTop");
+  const glow = document.querySelector(".cursor-glow");
 
-    const header = document.querySelector(".header");
+  function onScroll(){
+    const y = window.scrollY;
+    header?.classList.toggle("scrolled", y > 25);
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    if(progress) progress.style.width = (max > 0 ? (y / max) * 100 : 0) + "%";
+    backTop?.classList.toggle("show", y > 550);
 
-    function handleHeaderScroll() {
+    const sections = document.querySelectorAll("main section[id]");
+    const links = document.querySelectorAll(".desktop-nav a");
+    let current = "";
+    sections.forEach(section => {
+      const top = section.offsetTop - 140;
+      if(y >= top) current = section.id;
+    });
+    links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + current));
+  }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
 
-        if (window.scrollY > 50) {
+  if (window.matchMedia("(pointer:fine)").matches) {
+    window.addEventListener("mousemove", e => {
+      if(glow){
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+      }
+    });
+  }
 
-            header.style.background = "rgba(8, 8, 8, 0.94)";
-            header.style.borderBottom =
-                "1px solid rgba(255,255,255,0.10)";
+  const trigger = document.getElementById("menuTrigger");
+  const drawer = document.getElementById("mobileDrawer");
+  const overlay = document.getElementById("mobileOverlay");
+  const closeBtn = document.getElementById("drawerClose");
 
-        } else {
-
-            header.style.background =
-                "rgba(8, 8, 8, 0.78)";
-
-            header.style.borderBottom =
-                "1px solid rgba(255,255,255,0.05)";
-        }
+  window.closeMenu = function(){
+    drawer?.classList.remove("open");
+    overlay?.classList.remove("open");
+    trigger?.setAttribute("aria-expanded","false");
+    drawer?.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+    if(trigger){
+      trigger.innerHTML = '<i data-lucide="menu"></i>';
+      if(window.lucide) lucide.createIcons();
     }
+  }
 
-    window.addEventListener("scroll", handleHeaderScroll);
-
-    handleHeaderScroll();
-
-
-    /* =====================================================
-       ACTIVE NAVIGATION
-    ===================================================== */
-
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll(".nav-menu a");
-
-    function updateActiveNavigation() {
-
-        let currentSection = "";
-
-        sections.forEach(section => {
-
-            const sectionTop = section.offsetTop - 180;
-            const sectionHeight = section.offsetHeight;
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight
-            ) {
-                currentSection = section.getAttribute("id");
-            }
-
-        });
-
-        navLinks.forEach(link => {
-
-            link.style.color = "";
-
-            const href = link.getAttribute("href");
-
-            if (href === "#" + currentSection) {
-                link.style.color = "#ffffff";
-            }
-
-        });
+  function openMenu(){
+    drawer?.classList.add("open");
+    overlay?.classList.add("open");
+    trigger?.setAttribute("aria-expanded","true");
+    drawer?.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+    if(trigger){
+      trigger.innerHTML = '<i data-lucide="x"></i>';
+      if(window.lucide) lucide.createIcons();
     }
+  }
 
-    window.addEventListener("scroll", updateActiveNavigation);
+  trigger?.addEventListener("click", e => {
+    e.stopPropagation();
+    drawer?.classList.contains("open") ? closeMenu() : openMenu();
+  });
+  closeBtn?.addEventListener("click", closeMenu);
+  overlay?.addEventListener("click", closeMenu);
+  drawer?.querySelectorAll("a[href^='#']").forEach(a => a.addEventListener("click", closeMenu));
+  document.addEventListener("keydown", e => { if(e.key === "Escape") closeMenu(); });
+  window.addEventListener("resize", () => { if(window.innerWidth > 700) closeMenu(); });
 
-    updateActiveNavigation();
-
-
-    /* =====================================================
-       SMOOTH NAVIGATION
-    ===================================================== */
-
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-        link.addEventListener("click", function (event) {
-
-            const targetID = this.getAttribute("href");
-
-            if (targetID === "#") {
-                return;
-            }
-
-            const target = document.querySelector(targetID);
-
-            if (!target) {
-                return;
-            }
-
-            event.preventDefault();
-
-            const headerHeight = header.offsetHeight;
-
-            const targetPosition =
-                target.getBoundingClientRect().top +
-                window.scrollY -
-                headerHeight;
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: "smooth"
-            });
-
-        });
-
+  const reveal = document.querySelectorAll(".reveal");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
     });
+  }, {threshold:.12});
+  reveal.forEach(el => observer.observe(el));
 
-
-    /* =====================================================
-       REVEAL ANIMATION
-    ===================================================== */
-
-    const revealElements = document.querySelectorAll(
-        ".section, .project-card, .skill-card, .info-box, .experience-item"
-    );
-
-    revealElements.forEach(element => {
-
-        element.style.opacity = "0";
-        element.style.transform = "translateY(25px)";
-        element.style.transition =
-            "opacity 0.7s ease, transform 0.7s ease";
-
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", e => {
+      const id = link.getAttribute("href");
+      if(!id || id === "#") return;
+      const target = document.querySelector(id);
+      if(!target) return;
+      e.preventDefault();
+      window.scrollTo({top: target.getBoundingClientRect().top + window.scrollY - (header?.offsetHeight || 0), behavior:"smooth"});
     });
+  });
 
+  backTop?.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
 
-    const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
+  const year = document.getElementById("year");
+  if(year) year.textContent = new Date().getFullYear();
 
-            entries.forEach(entry => {
-
-                if (!entry.isIntersecting) {
-                    return;
-                }
-
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-
-                observer.unobserve(entry.target);
-
-            });
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-
-    revealElements.forEach(element => {
-        revealObserver.observe(element);
+  document.querySelectorAll(".work-image img").forEach(img => {
+    img.addEventListener("error", () => {
+      img.style.display = "none";
+      img.parentElement.style.background = "linear-gradient(135deg,#181d26,#090c11)";
     });
-
-
-    /* =====================================================
-       PROJECT CARD STAGGER
-    ===================================================== */
-
-    const projectCards =
-        document.querySelectorAll(".project-card");
-
-    projectCards.forEach((card, index) => {
-
-        card.style.transitionDelay =
-            `${index * 80}ms`;
-
-    });
-
-
-    /* =====================================================
-       SKILL CARD STAGGER
-    ===================================================== */
-
-    const skillCards =
-        document.querySelectorAll(".skill-card");
-
-    skillCards.forEach((card, index) => {
-
-        card.style.transitionDelay =
-            `${index * 100}ms`;
-
-    });
-
-
-    /* =====================================================
-       HERO PARALLAX
-    ===================================================== */
-
-    const profile =
-        document.querySelector(".profile-frame");
-
-    const floatingCards =
-        document.querySelectorAll(".floating-card");
-
-    window.addEventListener("mousemove", (event) => {
-
-        if (window.innerWidth < 900) {
-            return;
-        }
-
-        const x =
-            (event.clientX / window.innerWidth - 0.5);
-
-        const y =
-            (event.clientY / window.innerHeight - 0.5);
-
-
-        if (profile) {
-
-            profile.style.transform =
-                `rotate(2deg)
-                 translate(${x * 8}px, ${y * 8}px)`;
-        }
-
-
-        floatingCards.forEach((card, index) => {
-
-            const multiplier =
-                index === 0 ? 12 : -12;
-
-            card.style.marginLeft =
-                `${x * multiplier}px`;
-
-            card.style.marginTop =
-                `${y * multiplier}px`;
-
-        });
-
-    });
-
-
-    /* =====================================================
-       CURRENT YEAR
-    ===================================================== */
-
-    const footer =
-        document.querySelector(".footer");
-
-    if (footer) {
-
-        const year =
-            new Date().getFullYear();
-
-        footer.innerHTML =
-            footer.innerHTML.replace(
-                "2026",
-                year
-            );
-    }
-
-
-    /* =====================================================
-       EMAIL / WHATSAPP TRACKING
-       (Console only for now)
-    ===================================================== */
-
-    const contactLinks =
-        document.querySelectorAll(
-            'a[href^="mailto:"], a[href*="wa.me"]'
-        );
-
-    contactLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            console.log(
-                "Contact clicked:",
-                link.href
-            );
-
-        });
-
-    });
-
-
-    /* =====================================================
-       CONSOLE MESSAGE
-    ===================================================== */
-
-    console.log(
-        "%cUzair Ghaswala Portfolio",
-        "font-size:18px;font-weight:bold;"
-    );
-
-    console.log(
-        "Web Development • Digital Marketing"
-    );
-
+  });
 });
